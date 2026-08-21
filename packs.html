@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Choisir votre Pack — Gamma Academy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+
+<style>
+
+:root{
+  --champagne:#E6D3A4;
+  --champagne-deep:#D1A661;
+  --champagne-light:#F6EACB;
+
+  --navy:#16305C;
+
+  --paper:#F8F4E8;
+
+  --ink:#262316;
+  --ink-soft:#6b6656;
+
+  --brass:#C2C4CB;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+
+  margin:0;
+
+  min-height:100vh;
+
+  font-family:'Inter',sans-serif;
+
+  color:var(--ink);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:40px 20px;
+
+  background:
+    linear-gradient(
+      115deg,
+      var(--champagne),
+      var(--champagne-deep),
+      var(--champagne),
+      var(--champagne-light)
+    );
+
+  background-size:220% 220%;
+
+  animation:bgMove 15s ease-in-out infinite;
+}
+
+@keyframes bgMove{
+
+  0%,100%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+}
+
+.container{
+
+  width:100%;
+
+  max-width:1200px;
+
+  text-align:center;
+}
+
+.logo{
+
+  width:150px;
+
+  margin-bottom:28px;
+
+  border-radius:10px;
+
+  box-shadow:
+    0 15px 35px rgba(22,48,92,.25);
+
+  animation:logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+
+h1{
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:44px;
+
+  color:var(--navy);
+
+  margin:0 0 8px;
+}
+
+.subtitle{
+
+  color:var(--ink-soft);
+
+  font-size:14px;
+
+  margin:0 0 45px;
+}
+
+
+/* =========================
+   PACKS
+========================= */
+
+.packs{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:24px;
+}
+
+
+.pack{
+
+  position:relative;
+
+  min-height:390px;
+
+  padding:32px 24px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:flex-start;
+
+  text-decoration:none;
+
+  color:var(--navy);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.9),
+      rgba(248,244,232,.96)
+    );
+
+  border:1px solid rgba(194,196,203,.35);
+
+  border-radius:18px;
+
+  box-shadow:
+    0 25px 50px rgba(22,48,92,.18);
+
+  overflow:hidden;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+
+.pack::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:200px;
+
+  height:200px;
+
+  border-radius:50%;
+
+  top:-90px;
+
+  right:-70px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(230,211,164,.55),
+      transparent 70%
+    );
+}
+
+
+.pack:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+    0 35px 65px rgba(22,48,92,.25);
+}
+
+
+/* =========================
+   NUMERO
+========================= */
+
+.pack-number{
+
+  position:relative;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  letter-spacing:.18em;
+
+  color:var(--brass);
+
+  margin-bottom:8px;
+}
+
+
+/* =========================
+   TITRE
+========================= */
+
+.pack h2{
+
+  position:relative;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:36px;
+
+  margin:0 0 20px;
+
+  color:var(--navy);
+}
+
+
+/* =========================
+   AVANTAGES
+========================= */
+
+.advantages{
+
+  position:relative;
+
+  width:100%;
+
+  max-width:310px;
+
+  margin:0 auto 25px;
+
+  padding:0;
+
+  text-align:left;
+}
+
+
+.advantages li{
+
+  list-style:none;
+
+  position:relative;
+
+  padding:9px 8px 9px 28px;
+
+  margin-bottom:7px;
+
+  font-size:12px;
+
+  line-height:1.45;
+
+  color:var(--ink);
+
+  border-bottom:
+    1px solid rgba(194,196,203,.20);
+}
+
+
+.advantages li::before{
+
+  content:"✓";
+
+  position:absolute;
+
+  left:3px;
+
+  top:8px;
+
+  width:17px;
+
+  height:17px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:var(--navy);
+
+  color:#F6EACB;
+
+  font-size:9px;
+
+  font-weight:700;
+}
+
+
+/* =========================
+   BOUTON
+========================= */
+
+.pack-btn{
+
+  position:relative;
+
+  display:inline-block;
+
+  margin-top:auto;
+
+  padding:12px 23px;
+
+  border-radius:6px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #D1A661,
+      #F6EACB
+    );
+
+  border:1px solid #D6D8DD;
+
+  color:var(--navy);
+
+  font-size:10px;
+
+  font-weight:700;
+
+  letter-spacing:.10em;
+
+  text-transform:uppercase;
+
+  transition:.3s ease;
+}
+
+
+.pack:hover .pack-btn{
+
+  transform:scale(1.05);
+}
+
+
+
+
+
+.smartplus{
+
+  border:1.5px solid rgba(209,166,97,.65);
+
+  box-shadow:
+    0 28px 60px rgba(209,166,97,.3);
+
+  animation:recommendGlow 2.8s ease-in-out infinite;
+}
+
+.smartplus:hover{
+  animation-play-state:paused;
+}
+
+@keyframes recommendGlow{
+  0%,100%{
+    box-shadow:
+      0 28px 60px rgba(209,166,97,.3);
+  }
+  50%{
+    box-shadow:
+      0 30px 70px rgba(209,166,97,.65);
+  }
+}
+
+
+.smartplus .pack-number{
+
+  color:#84868C;
+}
+
+
+.smartplus::after{
+
+  content:"RECOMMANDÉ";
+
+  position:absolute;
+
+  top:18px;
+
+  right:-35px;
+
+  transform:rotate(35deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      #D1A661,
+      #F6EACB
+    );
+
+  color:var(--navy);
+
+  font-size:9px;
+
+  font-weight:700;
+
+  letter-spacing:.08em;
+
+  padding:6px 35px;
+
+  border:1px solid #D6D8DD;
+}
+
+
+
+@media(max-width:900px){
+
+  .packs{
+
+    grid-template-columns:repeat(2,1fr);
+
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  .packs{
+
+    grid-template-columns:1fr;
+
+  }
+
+  h1{
+
+    font-size:36px;
+
+  }
+
+  .pack{
+
+    min-height:360px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+
+
+  <img
+    src="logo1.png"
+    class="logo"
+    alt="Gamma Academy">
+
+
+  <!-- TITRE -->
+
+  <h1>
+    Choisissez votre Pack
+  </h1>
+
+
+  <p class="subtitle">
+    Sélectionnez la formule qui correspond le mieux à votre parcours.
+  </p>
+
+
+  <div class="packs">
+
+
+    
+    
+    
+
+    <a
+      href="pack.html?pack=smart"
+      class="pack">
+
+      <div class="pack-number">
+        PACK 01
+      </div>
+
+      <h2>
+        SMART
+      </h2>
+
+      <ul class="advantages">
+
+        <li>
+          Résumés de cours en ligne (+PDF)
+        </li>
+
+        <li>
+          Devoirs de contrôle et de synthèse corrigés
+        </li>
+
+        <li>
+          Exercices en ligne avec corrigés
+        </li>
+
+        <li>
+          Révision Baccalauréat + 9ème
+        </li>
+
+      </ul>
+
+      <span class="pack-btn">
+        Choisir Smart
+      </span>
+
+    </a>
+
+
+
+
+
+
+    <a
+      href="pack.html?pack=smartplus"
+      class="pack smartplus">
+
+      <div class="pack-number">
+        PACK 02
+      </div>
+
+      <h2>
+        SMART+
+      </h2>
+
+      <ul class="advantages">
+
+        <li>
+          Résumés de cours en ligne (+PDF)
+        </li>
+
+        <li>
+          Tous les avantages du Pack Smart
+        </li>
+
+        <li>
+          Séances interactives en direct
+        </li>
+
+        <li>
+          Interaction directe avec les professeurs
+        </li>
+
+        <li>
+          Accès spécial pendant les révisions et les vacances
+        </li>
+
+      </ul>
+
+      <span class="pack-btn">
+        Choisir Smart+
+      </span>
+
+    </a>
+
+
+
+
+
+
+    <a
+      href="pack.html?pack=prestige"
+      class="pack">
+
+      <div class="pack-number">
+        PACK 03
+      </div>
+
+      <h2>
+        PRESTIGE
+      </h2>
+
+      <ul class="advantages">
+
+        <li>
+          Résumés de cours en ligne (+PDF)
+        </li>
+
+        <li>
+          Séances d'enseignement interactives en direct
+        </li>
+
+        <li>
+          Interaction directe avec les professeurs
+        </li>
+
+        <li>
+          Enregistrements des séances
+        </li>
+
+        <li>
+          Supports de révision et exercices corrigés
+        </li>
+
+      </ul>
+
+      <span class="pack-btn">
+        Choisir Prestige
+      </span>
+
+    </a>
+
+
+  </div>
+
+
+</div>
+
+
+</body>
+
+</html>

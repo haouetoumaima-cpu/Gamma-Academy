@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription — Gamma Academy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --champagne:#E6D3A4;
+  --champagne-deep:#D1A661;
+  --champagne-light:#F6EACB;
+  --brass:#C2C4CB;
+  --navy:#16305C;
+  --paper:#F8F4E8;
+  --ink:#262316;
+  --ink-soft:#6b6656;
+  --error:#BC6B57;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+}
+
+body{
+  min-height:100vh;
+  font-family:'Inter',sans-serif;
+  color:var(--ink);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:50px 18px;
+
+  background:
+    linear-gradient(
+      115deg,
+      var(--champagne),
+      var(--champagne-deep),
+      var(--champagne),
+      var(--champagne-light)
+    );
+
+  background-size:220% 220%;
+  animation:metalShift 16s ease-in-out infinite;
+}
+
+@keyframes metalShift{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+
+  background-image:
+    repeating-linear-gradient(
+      100deg,
+      rgba(255,255,255,.05) 0px,
+      rgba(255,255,255,.05) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+
+  opacity:.5;
+}
+
+.card{
+  position:relative;
+  width:100%;
+  max-width:460px;
+
+  background:var(--paper);
+
+  border-radius:10px;
+
+  padding:76px 40px 44px;
+
+  box-shadow:
+    0 30px 70px -24px rgba(14,31,60,.45),
+    0 0 0 1px rgba(255,255,255,.4) inset;
+}
+
+.emblem{
+  position:absolute;
+  top:-46px;
+  left:50%;
+
+  width:172px;
+
+  border-radius:8px;
+  overflow:hidden;
+
+  box-shadow:
+    0 14px 28px -10px rgba(14,31,60,.5),
+    0 0 0 5px var(--paper);
+
+  animation:emblemFloat 4s ease-in-out infinite;
+}
+
+@keyframes emblemFloat{
+  0%,100%{transform:translateX(-50%) translateY(0)}
+  50%{transform:translateX(-50%) translateY(-7px)}
+}
+
+.emblem img{
+  display:block;
+  width:100%;
+}
+
+.heading{
+  text-align:center;
+  margin-bottom:26px;
+}
+
+.heading h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:29px;
+  font-weight:600;
+
+  color:var(--navy);
+
+  margin:0 0 8px;
+}
+
+.heading p{
+  font-size:13px;
+  color:var(--ink-soft);
+  margin:0;
+  line-height:1.5;
+}
+
+.rule{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  width:78%;
+  margin:18px auto 26px;
+}
+
+.rule .line{
+  flex:1;
+  height:1px;
+  background:rgba(22,48,92,.14);
+}
+
+.rule .dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--champagne-deep);
+  transform:rotate(45deg);
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field label{
+  font-size:11.5px;
+  font-weight:600;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--navy);
+}
+
+input,
+select{
+  width:100%;
+
+  font-family:'Inter',sans-serif;
+  font-size:14.5px;
+
+  color:var(--ink);
+
+  padding:12px 13px;
+
+  border:1.5px solid var(--champagne-deep);
+  border-radius:6px;
+
+  background:rgba(255,255,255,.35);
+
+  outline:none;
+
+  transition:.2s ease;
+}
+
+input::placeholder{
+  color:#b9b2a0;
+}
+
+input:focus,
+select:focus{
+  border-color:var(--brass);
+  background:#fffdf8;
+
+  box-shadow:
+    0 0 0 3px rgba(194,196,203,.12);
+}
+
+select{
+  appearance:none;
+  cursor:pointer;
+
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23C2C4CB' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+
+  background-repeat:no-repeat;
+  background-position:right 13px center;
+
+  padding-right:38px;
+}
+
+.pw-wrap{
+  position:relative;
+}
+
+.pw-wrap input{
+  padding-right:70px;
+}
+
+.pw-toggle{
+  position:absolute;
+  right:8px;
+  top:50%;
+  transform:translateY(-50%);
+
+  background:none;
+  border:none;
+
+  cursor:pointer;
+
+  font-size:11px;
+  font-weight:600;
+
+  color:var(--brass);
+}
+
+.error-msg{
+  min-height:14px;
+
+  font-size:11.5px;
+  color:var(--error);
+}
+
+.field.has-error input,
+.field.has-error select{
+  border-color:var(--error);
+
+  box-shadow:
+    0 0 0 3px rgba(188,107,87,.08);
+}
+
+.submit-btn{
+  margin-top:10px;
+
+  padding:14px 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #D1A661,
+      #E6D3A4 45%,
+      #F6EACB
+    );
+
+  color:var(--navy);
+
+  border:1px solid #D6D8DD;
+  border-radius:6px;
+
+  font-size:12.5px;
+  font-weight:700;
+
+  letter-spacing:.12em;
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 8px 20px rgba(209,166,97,.28),
+    inset 0 1px 0 rgba(255,255,255,.55);
+
+  transition:.25s ease;
+
+  animation:ctaPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes ctaPulse{
+  0%,100%{
+    box-shadow:
+      0 8px 20px rgba(209,166,97,.28),
+      inset 0 1px 0 rgba(255,255,255,.55);
+  }
+  50%{
+    box-shadow:
+      0 10px 32px rgba(209,166,97,.62),
+      inset 0 1px 0 rgba(255,255,255,.7);
+  }
+}
+
+.submit-btn:hover{
+  transform:translateY(-1px);
+  animation-play-state:paused;
+
+  box-shadow:
+    0 12px 30px rgba(209,166,97,.55);
+}
+
+
+.confirm-banner{
+  position:fixed;
+
+  top:24px;
+  left:50%;
+
+  transform:
+    translate(-50%,-140px)
+    scale(.95);
+
+  width:min(450px,calc(100% - 30px));
+
+  display:flex;
+  align-items:center;
+  gap:13px;
+
+  padding:17px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.98),
+      rgba(248,244,232,.98)
+    );
+
+  border:1px solid rgba(194,196,203,.35);
+  border-radius:14px;
+
+  box-shadow:
+    0 18px 45px rgba(22,48,92,.22);
+
+  opacity:0;
+  visibility:hidden;
+
+  z-index:99999;
+
+  transition:
+    transform .65s cubic-bezier(.22,1,.36,1),
+    opacity .4s ease;
+}
+
+.confirm-banner.show{
+  transform:
+    translate(-50%,0)
+    scale(1);
+
+  opacity:1;
+  visibility:visible;
+}
+
+.confirm-icon{
+  width:36px;
+  height:36px;
+
+  flex-shrink:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #D1A661,
+      #F6EACB
+    );
+
+  color:var(--navy);
+
+  font-size:17px;
+  font-weight:700;
+}
+
+.confirm-banner strong{
+  display:block;
+
+  color:var(--navy);
+
+  font-size:13px;
+
+  margin-bottom:4px;
+}
+
+.confirm-banner span{
+  display:block;
+
+  color:var(--ink-soft);
+
+  font-size:12px;
+
+  line-height:1.5;
+}
+
+@media(max-width:520px){
+
+  .card{
+    padding:70px 26px 34px;
+  }
+
+  .emblem{
+    width:140px;
+    top:-38px;
+  }
+
+  .confirm-banner{
+    top:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="emblem">
+    <img src="logo1.png" alt="Gamma Academy">
+  </div>
+
+  <div class="heading">
+
+    <h1>Bienvenue</h1>
+
+    <p>
+      Veuillez remplir vos informations pour rejoindre Gamma Academy.
+    </p>
+
+  </div>
+
+  <div class="rule">
+    <span class="line"></span>
+    <span class="dot"></span>
+    <span class="line"></span>
+  </div>
+
+  <form id="signupForm" novalidate>
+
+
+    <div class="field" id="field-login">
+
+      <label for="login">
+        Identifiant
+      </label>
+
+      <input
+        type="text"
+        id="login"
+        placeholder=""
+        autocomplete="username"
+      >
+
+      <div
+        class="error-msg"
+        id="err-login">
+      </div>
+
+    </div>
+
+
+    <div class="field" id="field-password">
+
+      <label for="password">
+        Mot de passe
+      </label>
+
+      <div class="pw-wrap">
+
+        <input
+          type="password"
+          id="password"
+          placeholder="••••••••"
+          autocomplete="new-password"
+        >
+
+        <button
+          type="button"
+          class="pw-toggle"
+          id="togglePw">
+          Afficher
+        </button>
+
+      </div>
+
+      <div
+        class="error-msg"
+        id="err-password">
+      </div>
+
+    </div>
+
+
+    <div class="field" id="field-niveau">
+
+      <label for="niveau">
+        Niveau scolaire
+      </label>
+
+      <select id="niveau">
+
+        <option value="" disabled selected>
+          Choisir un niveau…
+        </option>
+
+        <option value="7eme">
+          7ème année
+        </option>
+
+        <option value="8eme">
+          8ème année
+        </option>
+
+        <option value="9eme">
+          9ème année
+        </option>
+
+        <option value="1sec">
+          1ère année secondaire
+        </option>
+
+        <optgroup label="2ème année secondaire">
+
+          <option value="2sec-lettres">
+            2ème année secondaire — Lettres
+          </option>
+
+          <option value="2sec-sciences">
+            2ème année secondaire — Sciences
+          </option>
+
+          <option value="2sec-eco">
+            2ème année secondaire — Économie et gestion
+          </option>
+
+          <option value="2sec-info">
+            2ème année secondaire — Informatique
+          </option>
+
+        </optgroup>
+
+        <optgroup label="3ème année secondaire">
+
+          <option value="3sec-info">
+            3ème année secondaire — Informatique
+          </option>
+
+          <option value="3sec-lettres">
+            3ème année secondaire — Lettres
+          </option>
+
+          <option value="3sec-eco">
+            3ème année secondaire — Économie
+          </option>
+
+          <option value="3sec-sciences">
+            3ème année secondaire — Sciences
+          </option>
+
+          <option value="3sec-math">
+            3ème année secondaire — Mathématiques
+          </option>
+
+          <option value="3sec-tech">
+            3ème année secondaire — Technique
+          </option>
+
+        </optgroup>
+
+        <optgroup label="4ème année — Baccalauréat">
+
+          <option value="bac-info">
+            Baccalauréat — Informatique
+          </option>
+
+          <option value="bac-lettres">
+            Baccalauréat — Lettres
+          </option>
+
+          <option value="bac-eco">
+            Baccalauréat — Économie
+          </option>
+
+          <option value="bac-sciences">
+            Baccalauréat — Sciences
+          </option>
+
+          <option value="bac-math">
+            Baccalauréat — Mathématiques
+          </option>
+
+          <option value="bac-tech">
+            Baccalauréat — Technique
+          </option>
+
+        </optgroup>
+
+      </select>
+
+      <div
+        class="error-msg"
+        id="err-niveau">
+      </div>
+
+    </div>
+
+
+    <button
+      type="submit"
+      class="submit-btn">
+      Confirmer l'inscription
+    </button>
+
+  </form>
+
+</div>
+
+
+<div
+  class="confirm-banner"
+  id="confirmBanner">
+
+  <div class="confirm-icon">
+    ✓
+  </div>
+
+  <div>
+
+    <strong>
+      Inscription réussie
+    </strong>
+
+    <span>
+      Votre inscription a été enregistrée avec succès.
+    </span>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const form =
+  document.getElementById("signupForm");
+
+const login =
+  document.getElementById("login");
+
+const password =
+  document.getElementById("password");
+
+const niveau =
+  document.getElementById("niveau");
+
+const togglePw =
+  document.getElementById("togglePw");
+
+const banner =
+  document.getElementById("confirmBanner");
+
+
+togglePw.addEventListener("click",()=>{
+
+  if(password.type === "password"){
+
+    password.type = "text";
+
+    togglePw.textContent = "Masquer";
+
+  }else{
+
+    password.type = "password";
+
+    togglePw.textContent = "Afficher";
+
+  }
+
+});
+
+function setError(field,message){
+
+  document
+    .getElementById(`field-${field}`)
+    .classList
+    .add("has-error");
+
+  document
+    .getElementById(`err-${field}`)
+    .textContent = message;
+
+}
+
+
+function clearError(field){
+
+  document
+    .getElementById(`field-${field}`)
+    .classList
+    .remove("has-error");
+
+  document
+    .getElementById(`err-${field}`)
+    .textContent = "";
+
+}
+
+
+form.addEventListener("submit",(e)=>{
+
+  e.preventDefault();
+
+  let valid = true;
+
+
+  if(login.value.trim().length < 3){
+
+    setError(
+      "login",
+      "L'identifiant doit contenir au moins 3 caractères."
+    );
+
+    valid = false;
+
+  }else{
+
+    clearError("login");
+
+  }
+
+
+  if(password.value.length < 6){
+
+    setError(
+      "password",
+      "Le mot de passe doit contenir au moins 6 caractères."
+    );
+
+    valid = false;
+
+  }else{
+
+    clearError("password");
+
+  }
+
+
+  if(!niveau.value){
+
+    setError(
+      "niveau",
+      "Merci de choisir un niveau."
+    );
+
+    valid = false;
+
+  }else{
+
+    clearError("niveau");
+
+  }
+
+
+  if(!valid) return;
+
+
+  const userData = {
+
+    login:login.value.trim(),
+
+    niveau:niveau.value,
+
+    niveauLabel:
+      niveau.options[niveau.selectedIndex].text
+
+  };
+
+
+  localStorage.setItem(
+    "gamma_user",
+    JSON.stringify(userData)
+  );
+
+
+
+  banner.classList.add("show");
+
+
+  setTimeout(()=>{
+
+    window.location.href = "packs.html";
+
+  },1800);
+
+});
+
+</script>
+
+</body>
+</html>

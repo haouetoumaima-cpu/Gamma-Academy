@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+<title>Pack — Gamma Academy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+
+<style>
+
+:root{
+
+  --champagne:#E6D3A4;
+  --champagne-deep:#D1A661;
+  --champagne-light:#F6EACB;
+
+  --navy:#16305C;
+
+  --paper:#F8F4E8;
+
+  --ink:#262316;
+  --ink-soft:#6b6656;
+
+  --brass:#C2C4CB;
+
+  --green:#3E5A31;
+  --green-bg:#E2E9DC;
+
+  --warning:#946C22;
+  --warning-bg:#FFF4DE;
+
+  --red:#BC6B57;
+  --red-bg:#F2E1DC;
+
+}
+
+*{
+
+  box-sizing:border-box;
+
+}
+
+body{
+
+  margin:0;
+
+  min-height:100vh;
+
+  font-family:'Inter',sans-serif;
+
+  color:var(--ink);
+
+  padding:50px 20px;
+
+  background:
+    linear-gradient(
+      115deg,
+      var(--champagne),
+      var(--champagne-deep),
+      var(--champagne),
+      var(--champagne-light)
+    );
+
+  background-size:220% 220%;
+
+  animation:bgMove 15s ease-in-out infinite;
+
+}
+
+
+@keyframes bgMove{
+
+  0%,100%{
+
+    background-position:0% 50%;
+
+  }
+
+  50%{
+
+    background-position:100% 50%;
+
+  }
+
+}
+
+
+.container{
+
+  width:100%;
+
+  max-width:1100px;
+
+  margin:auto;
+
+}
+
+
+.header{
+
+  text-align:center;
+
+  margin-bottom:35px;
+
+}
+
+
+.logo{
+
+  width:130px;
+
+  border-radius:9px;
+
+  margin-bottom:20px;
+
+  box-shadow:
+    0 12px 30px rgba(22,48,92,.25);
+
+  animation:logoFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+
+
+.pack-label{
+
+  font-size:11px;
+
+  font-weight:700;
+
+  letter-spacing:.18em;
+
+  color:var(--brass);
+
+  text-transform:uppercase;
+
+  margin-bottom:7px;
+
+}
+
+
+h1{
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:46px;
+
+  color:var(--navy);
+
+  margin:0 0 8px;
+
+}
+
+
+.description{
+
+  color:var(--ink-soft);
+
+  font-size:13px;
+
+  margin:0;
+
+}
+
+
+
+
+
+
+.table-card{
+
+  background:
+    rgba(248,244,232,.97);
+
+  border-radius:14px;
+
+  padding:25px;
+
+  box-shadow:
+    0 25px 60px rgba(22,48,92,.20);
+
+  border:
+    1px solid rgba(194,196,203,.3);
+
+}
+
+
+.table-wrapper{
+
+  width:100%;
+
+  overflow-x:auto;
+
+}
+
+
+table{
+
+  width:100%;
+
+  min-width:500px;
+
+  border-collapse:collapse;
+
+}
+
+
+thead th{
+
+  padding:16px 15px;
+
+  text-align:left;
+
+  font-size:11px;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+
+  color:var(--navy);
+
+  background:
+    linear-gradient(
+      135deg,
+      #E6D3A4,
+      #F6EACB
+    );
+
+  border-bottom:
+    1px solid #D6D8DD;
+
+}
+
+
+tbody td{
+
+  padding:15px;
+
+  border-bottom:
+    1px solid rgba(22,48,92,.08);
+
+  font-size:13px;
+
+}
+
+
+tbody tr{
+
+  transition:.2s ease;
+
+}
+
+
+tbody tr:hover{
+
+  background:
+    rgba(230,211,164,.13);
+
+}
+
+
+.level-name{
+
+  font-weight:600;
+
+  color:var(--navy);
+
+}
+
+
+.capacity{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-width:90px;
+
+  padding:7px 12px;
+
+  border-radius:20px;
+
+  background:var(--green-bg);
+
+  color:var(--green);
+
+  font-weight:700;
+
+  font-size:12px;
+
+}
+
+
+.capacity.warning{
+
+  background:var(--warning-bg);
+
+  color:var(--warning);
+
+}
+
+
+.capacity.full{
+
+  background:var(--red-bg);
+
+  color:var(--red);
+
+}
+
+
+.register-btn{
+
+  padding:9px 16px;
+
+  border-radius:5px;
+
+  border:1px solid #D6D8DD;
+
+  background:
+    linear-gradient(
+      135deg,
+      #D1A661,
+      #F6EACB
+    );
+
+  color:var(--navy);
+
+  font-size:11px;
+
+  font-weight:700;
+
+  letter-spacing:.06em;
+
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+
+}
+
+
+.register-btn:hover{
+
+  transform:translateY(-1px);
+
+  box-shadow:
+    0 6px 15px rgba(194,196,203,.25);
+
+}
+
+
+.register-btn:disabled{
+
+  cursor:not-allowed;
+
+  background:#E4E1D8;
+
+  color:#999;
+
+  border-color:#D2CEC2;
+
+  box-shadow:none;
+
+  transform:none;
+
+}
+
+
+.modal-overlay{
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+    rgba(22,48,92,.58);
+
+  backdrop-filter:blur(5px);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+
+  z-index:10000;
+
+  opacity:0;
+
+  visibility:hidden;
+
+  transition:.3s ease;
+
+}
+
+
+.modal-overlay.show{
+
+  opacity:1;
+
+  visibility:visible;
+
+}
+
+
+.modal{
+
+  width:min(500px,100%);
+
+  background:var(--paper);
+
+  border-radius:16px;
+
+  padding:30px;
+
+  box-shadow:
+    0 30px 80px rgba(22,48,92,.35);
+
+  border:
+    1px solid rgba(194,196,203,.35);
+
+  transform:translateY(20px) scale(.97);
+
+  transition:.3s ease;
+
+}
+
+
+.modal-overlay.show .modal{
+
+  transform:translateY(0) scale(1);
+
+}
+
+
+.modal-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  margin-bottom:25px;
+
+}
+
+
+.modal-title{
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:30px;
+
+  color:var(--navy);
+
+  margin:0;
+
+}
+
+
+.modal-subtitle{
+
+  font-size:12px;
+
+  color:var(--ink-soft);
+
+  margin-top:4px;
+
+}
+
+
+.close-modal{
+
+  border:none;
+
+  background:none;
+
+  font-size:24px;
+
+  color:var(--ink-soft);
+
+  cursor:pointer;
+
+  line-height:1;
+
+}
+
+
+.form-group{
+
+  margin-bottom:17px;
+
+}
+
+
+.form-group label{
+
+  display:block;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  color:var(--navy);
+
+  margin-bottom:7px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.05em;
+
+}
+
+
+.form-group input,
+.form-group select{
+
+  width:100%;
+
+  padding:12px 13px;
+
+  border:1px solid #DFCBA0;
+
+  border-radius:7px;
+
+  background:white;
+
+  color:var(--ink);
+
+  font-family:'Inter',sans-serif;
+
+  font-size:13px;
+
+  outline:none;
+
+  transition:.2s ease;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus{
+
+  border-color:var(--brass);
+
+  box-shadow:
+    0 0 0 3px rgba(194,196,203,.12);
+
+}
+
+
+.form-level{
+
+  padding:11px 13px;
+
+  border-radius:7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #F6EACB,
+      #E6D3A4
+    );
+
+  color:var(--navy);
+
+  font-weight:600;
+
+  font-size:13px;
+
+}
+
+
+.submit-btn{
+
+  width:100%;
+
+  margin-top:5px;
+
+  padding:13px;
+
+  border:none;
+
+  border-radius:7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #D1A661,
+      #F6EACB
+    );
+
+  color:var(--navy);
+
+  font-size:12px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:.07em;
+
+  cursor:pointer;
+
+  border:1px solid #D6D8DD;
+
+  transition:.25s ease;
+
+}
+
+
+.submit-btn:hover{
+
+  transform:translateY(-1px);
+
+  box-shadow:
+    0 7px 18px rgba(194,196,203,.25);
+
+}
+
+
+
+.notification{
+
+  position:fixed;
+
+  top:22px;
+
+  left:50%;
+
+  transform:
+    translate(-50%,-130px)
+    scale(.95);
+
+  width:min(450px,calc(100% - 30px));
+
+  padding:16px 20px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.98),
+      rgba(248,244,232,.98)
+    );
+
+  border:1px solid rgba(194,196,203,.35);
+
+  border-radius:14px;
+
+  box-shadow:
+    0 18px 45px rgba(22,48,92,.22);
+
+  opacity:0;
+
+  visibility:hidden;
+
+  z-index:9999;
+
+  transition:
+    transform .6s cubic-bezier(.22,1,.36,1),
+    opacity .35s ease;
+
+}
+
+
+.notification.show{
+
+  transform:
+    translate(-50%,0)
+    scale(1);
+
+  opacity:1;
+
+  visibility:visible;
+
+}
+
+
+.notification-icon{
+
+  width:34px;
+
+  height:34px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:50%;
+
+  flex-shrink:0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #D1A661,
+      #F6EACB
+    );
+
+  color:var(--navy);
+
+  font-weight:700;
+
+}
+
+
+.notification strong{
+
+  display:block;
+
+  font-size:13px;
+
+  color:var(--navy);
+
+  margin-bottom:3px;
+
+}
+
+
+.notification span{
+
+  font-size:12px;
+
+  color:var(--ink-soft);
+
+}
+
+
+.back{
+
+  display:block;
+
+  width:max-content;
+
+  margin:25px auto 0;
+
+  color:var(--navy);
+
+  text-decoration:none;
+
+  font-size:12px;
+
+  font-weight:600;
+
+}
+
+
+.back:hover{
+
+  color:var(--brass);
+
+}
+
+
+
+@media(max-width:700px){
+
+  body{
+
+    padding:30px 12px;
+
+  }
+
+  h1{
+
+    font-size:38px;
+
+  }
+
+  .table-card{
+
+    padding:15px;
+
+  }
+
+  .modal{
+
+    padding:22px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+
+  <div class="header">
+
+    <img
+      src="logo1.png"
+      class="logo"
+      alt="Gamma Academy">
+
+
+    <div
+      class="pack-label"
+      id="packLabel">
+
+      PACK
+
+    </div>
+
+
+    <h1 id="packTitle">
+
+      SMART
+
+    </h1>
+
+
+    <p
+      class="description"
+      id="packDescription">
+
+      Choisissez votre niveau scolaire.
+
+    </p>
+
+  </div>
+
+
+
+  <div class="table-card">
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead id="tableHead">
+        </thead>
+
+        <tbody id="levelsTable">
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+  <!-- RETOUR -->
+
+  <a
+    href="packs.html"
+    class="back">
+
+    ← Retour aux packs
+
+  </a>
+
+
+</div>
+
+
+
+
+
+
+<div
+  class="modal-overlay"
+  id="registrationModal">
+
+  <div class="modal">
+
+
+    <div class="modal-header">
+
+      <div>
+
+        <h2 class="modal-title">
+
+          Inscription
+
+        </h2>
+
+
+        <div
+          class="modal-subtitle"
+          id="modalPack">
+
+          Gamma Academy
+
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="close-modal"
+        id="closeModal">
+
+        ×
+
+      </button>
+
+    </div>
+
+
+    <form id="registrationForm">
+
+
+     
+
+      <div class="form-group">
+
+        <label>
+          Niveau
+        </label>
+
+
+        <div
+          class="form-level"
+          id="selectedLevel">
+        </div>
+
+      </div>
+
+
+      <!-- NOM -->
+
+      <div class="form-group">
+
+        <label for="studentLastName">
+
+          Nom de l'élève
+
+        </label>
+
+
+        <input
+          type="text"
+          id="studentLastName"
+          placeholder="Nom"
+          required>
+
+      </div>
+
+
+    
+
+      <div class="form-group">
+
+        <label for="studentFirstName">
+
+          Prénom de l'élève
+
+        </label>
+
+
+        <input
+          type="text"
+          id="studentFirstName"
+          placeholder="Prénom"
+          required>
+
+      </div>
+
+
+
+      <div class="form-group">
+
+        <label for="paymentMethod">
+
+          Méthode de paiement
+
+        </label>
+
+
+        <select
+          id="paymentMethod"
+          required>
+
+          <option value="">
+
+            Sélectionner une méthode
+
+          </option>
+
+
+          <option value="Espèces">
+
+            Espèces
+
+          </option>
+
+
+          <option value="Virement bancaire">
+
+            Virement bancaire
+
+          </option>
+
+
+          <option value="Chèque">
+
+            Chèque
+
+          </option>
+
+
+          <option value="Carte bancaire">
+
+            Carte bancaire
+
+          </option>
+
+        </select>
+
+      </div>
+
+
+     
+
+      <button
+        type="submit"
+        class="submit-btn">
+
+        Confirmer l'inscription
+
+      </button>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+
+
+<div
+  class="notification"
+  id="notification">
+
+
+  <div class="notification-icon">
+
+    ✓
+
+  </div>
+
+
+  <div>
+
+    <strong id="notificationTitle">
+
+      Inscription confirmée
+
+    </strong>
+
+
+    <span id="notificationText">
+
+      Votre inscription a été enregistrée.
+
+    </span>
+
+  </div>
+
+
+</div>
+
+
+<script>
+
+const levels = [
+
+  {
+    id:"7eme",
+    name:"7ème année"
+  },
+
+  {
+    id:"8eme",
+    name:"8ème année"
+  },
+
+  {
+    id:"9eme",
+    name:"9ème année"
+  },
+
+  {
+    id:"1sec",
+    name:"1ère année secondaire"
+  },
+
+  {
+    id:"2sec-lettres",
+    name:"2ème année secondaire — Lettres"
+  },
+
+  {
+    id:"2sec-sciences",
+    name:"2ème année secondaire — Sciences"
+  },
+
+  {
+    id:"2sec-eco",
+    name:"2ème année secondaire — Économie et gestion"
+  },
+
+  {
+    id:"2sec-info",
+    name:"2ème année secondaire — Informatique"
+  },
+
+  {
+    id:"3sec-info",
+    name:"3ème année secondaire — Informatique"
+  },
+
+  {
+    id:"3sec-lettres",
+    name:"3ème année secondaire — Lettres"
+  },
+
+  {
+    id:"3sec-eco",
+    name:"3ème année secondaire — Économie"
+  },
+
+  {
+    id:"3sec-sciences",
+    name:"3ème année secondaire — Sciences"
+  },
+
+  {
+    id:"3sec-math",
+    name:"3ème année secondaire — Mathématiques"
+  },
+
+  {
+    id:"3sec-tech",
+    name:"3ème année secondaire — Technique"
+  },
+
+  {
+    id:"bac-info",
+    name:"Baccalauréat — Informatique"
+  },
+
+  {
+    id:"bac-lettres",
+    name:"Baccalauréat — Lettres"
+  },
+
+  {
+    id:"bac-eco",
+    name:"Baccalauréat — Économie"
+  },
+
+  {
+    id:"bac-sciences",
+    name:"Baccalauréat — Sciences"
+  },
+
+  {
+    id:"bac-math",
+    name:"Baccalauréat — Mathématiques"
+  },
+
+  {
+    id:"bac-tech",
+    name:"Baccalauréat — Technique"
+  }
+
+];
+
+
+const params =
+  new URLSearchParams(
+    window.location.search
+  );
+
+
+const pack =
+  params.get("pack");
+
+
+if(
+  pack !== "smart" &&
+  pack !== "smartplus" &&
+  pack !== "prestige"
+){
+
+  window.location.href =
+    "packs.html";
+
+}
+
+
+
+const packLabel =
+  document.getElementById(
+    "packLabel"
+  );
+
+
+const packTitle =
+  document.getElementById(
+    "packTitle"
+  );
+
+
+const packDescription =
+  document.getElementById(
+    "packDescription"
+  );
+
+
+if(pack === "smart"){
+
+  packLabel.textContent =
+    "PACK 01";
+
+  packTitle.textContent =
+    "SMART";
+
+  packDescription.textContent =
+    "Choisissez votre niveau pour rejoindre le Pack Smart.";
+
+}
+
+
+else if(pack === "smartplus"){
+
+  packLabel.textContent =
+    "PACK 02";
+
+  packTitle.textContent =
+    "SMART+";
+
+  packDescription.textContent =
+    "Choisissez votre niveau pour rejoindre le Pack Smart+.";
+
+}
+
+
+else if(pack === "prestige"){
+
+  packLabel.textContent =
+    "PACK 03";
+
+  packTitle.textContent =
+    "PRESTIGE";
+
+  packDescription.textContent =
+    "Choisissez votre niveau pour rejoindre le Pack Prestige.";
+
+}
+
+
+const ROOM_CAPACITY = {
+
+  "7eme":30,
+  "8eme":30,
+  "9eme":30,
+
+  "1sec":30,
+
+  "2sec-lettres":30,
+  "2sec-sciences":30,
+  "2sec-eco":30,
+  "2sec-info":30,
+
+  "3sec-info":30,
+  "3sec-lettres":30,
+  "3sec-eco":30,
+  "3sec-sciences":30,
+  "3sec-math":30,
+  "3sec-tech":30,
+
+  "bac-info":30,
+  "bac-lettres":30,
+  "bac-eco":30,
+  "bac-sciences":30,
+  "bac-math":30,
+  "bac-tech":30
+
+};
+
+
+const storageKey =
+  "gamma_capacity_prestige";
+
+
+function getCapacities(){
+
+  const saved =
+    localStorage.getItem(
+      storageKey
+    );
+
+
+  if(saved){
+
+    return JSON.parse(saved);
+
+  }
+
+
+  const initial = {};
+
+
+  levels.forEach(level=>{
+
+    initial[level.id] =
+      ROOM_CAPACITY[level.id] || 0;
+
+  });
+
+
+  localStorage.setItem(
+    storageKey,
+    JSON.stringify(initial)
+  );
+
+
+  return initial;
+
+}
+
+
+function saveCapacities(data){
+
+  localStorage.setItem(
+    storageKey,
+    JSON.stringify(data)
+  );
+
+}
+
+
+function renderTable(){
+
+  const table =
+    document.getElementById(
+      "levelsTable"
+    );
+
+
+  const tableHead =
+    document.getElementById(
+      "tableHead"
+    );
+
+
+  table.innerHTML = "";
+
+  tableHead.innerHTML = "";
+
+  if(
+    pack === "smart" ||
+    pack === "smartplus"
+  ){
+
+    tableHead.innerHTML = `
+
+      <tr>
+
+        <th>
+          Niveau scolaire
+        </th>
+
+        <th>
+          Action
+        </th>
+
+      </tr>
+
+    `;
+
+
+    levels.forEach(level=>{
+
+      const row =
+        document.createElement("tr");
+
+
+      const nameCell =
+        document.createElement("td");
+
+
+      nameCell.className =
+        "level-name";
+
+
+      nameCell.textContent =
+        level.name;
+
+
+      const actionCell =
+        document.createElement("td");
+
+
+      const button =
+        document.createElement("button");
+
+
+      button.className =
+        "register-btn";
+
+
+      button.textContent =
+        "S'inscrire";
+
+      button.addEventListener(
+        "click",
+        ()=>{
+
+          openRegistration(
+            level.id
+          );
+
+        }
+      );
+
+
+      actionCell.appendChild(
+        button
+      );
+
+
+      row.appendChild(
+        nameCell
+      );
+
+
+      row.appendChild(
+        actionCell
+      );
+
+
+      table.appendChild(
+        row
+      );
+
+    });
+
+
+    return;
+
+  }
+
+
+  tableHead.innerHTML = `
+
+    <tr>
+
+      <th>
+        Niveau scolaire
+      </th>
+
+      <th>
+        Capacité de la salle
+      </th>
+
+      <th>
+        Action
+      </th>
+
+    </tr>
+
+  `;
+
+
+  const capacities =
+    getCapacities();
+
+
+  levels.forEach(level=>{
+
+    const capacity =
+      capacities[level.id] ?? 0;
+
+
+    const row =
+      document.createElement("tr");
+
+
+    const nameCell =
+      document.createElement("td");
+
+
+    nameCell.className =
+      "level-name";
+
+
+    nameCell.textContent =
+      level.name;
+
+
+    const capacityCell =
+      document.createElement("td");
+
+
+    const badge =
+      document.createElement("span");
+
+
+    badge.className =
+      "capacity";
+
+
+    badge.textContent =
+      `${capacity} place(s)`;
+
+
+    if(capacity === 0){
+
+      badge.classList.add(
+        "full"
+      );
+
+    }
+
+    else if(capacity <= 5){
+
+      badge.classList.add(
+        "warning"
+      );
+
+    }
+
+
+    capacityCell.appendChild(
+      badge
+    );
+
+
+    const actionCell =
+      document.createElement("td");
+
+
+    const button =
+      document.createElement("button");
+
+
+    button.className =
+      "register-btn";
+
+
+    button.textContent =
+      capacity === 0
+        ? "COMPLET"
+        : "S'inscrire";
+
+
+    button.disabled =
+      capacity === 0;
+
+
+    button.addEventListener(
+      "click",
+      ()=>{
+
+        openRegistration(
+          level.id
+        );
+
+      }
+    );
+
+
+    actionCell.appendChild(
+      button
+    );
+
+
+    row.appendChild(
+      nameCell
+    );
+
+
+    row.appendChild(
+      capacityCell
+    );
+
+
+    row.appendChild(
+      actionCell
+    );
+
+
+    table.appendChild(
+      row
+    );
+
+  });
+
+}
+
+
+const modal =
+  document.getElementById(
+    "registrationModal"
+  );
+
+
+const registrationForm =
+  document.getElementById(
+    "registrationForm"
+  );
+
+
+const selectedLevel =
+  document.getElementById(
+    "selectedLevel"
+  );
+
+
+const modalPack =
+  document.getElementById(
+    "modalPack"
+  );
+
+
+const closeModal =
+  document.getElementById(
+    "closeModal"
+  );
+
+
+let selectedLevelId = null;
+
+
+function openRegistration(levelId){
+
+  /*
+   Vérification uniquement
+   pour PRESTIGE
+  */
+
+  if(pack === "prestige"){
+
+    const capacities =
+      getCapacities();
+
+
+    if(
+      capacities[levelId] <= 0
+    ){
+
+      showNotification(
+        "Niveau complet",
+        "Cette salle ne dispose plus de places."
+      );
+
+
+      return;
+
+    }
+
+  }
+
+
+  const level =
+    levels.find(
+      item =>
+        item.id === levelId
+    );
+
+
+  if(!level){
+
+    return;
+
+  }
+
+
+  selectedLevelId =
+    levelId;
+
+
+
+  selectedLevel.textContent =
+    level.name;
+
+
+  if(pack === "smart"){
+
+    modalPack.textContent =
+      "Pack Smart";
+
+  }
+
+  else if(pack === "smartplus"){
+
+    modalPack.textContent =
+      "Pack Smart+";
+
+  }
+
+  else{
+
+    modalPack.textContent =
+      "Pack Prestige";
+
+  }
+
+
+  registrationForm.reset();
+
+
+  selectedLevel.textContent =
+    level.name;
+
+
+  modal.classList.add(
+    "show"
+  );
+
+ 
+
+  setTimeout(()=>{
+
+    document
+      .getElementById(
+        "studentLastName"
+      )
+      .focus();
+
+  },200);
+
+}
+
+
+function closeRegistration(){
+
+  modal.classList.remove(
+    "show"
+  );
+
+
+  selectedLevelId =
+    null;
+
+}
+
+
+closeModal.addEventListener(
+  "click",
+  closeRegistration
+);
+
+modal.addEventListener(
+  "click",
+  event=>{
+
+    if(
+      event.target === modal
+    ){
+
+      closeRegistration();
+
+    }
+
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  event=>{
+
+    if(
+      event.key === "Escape" &&
+      modal.classList.contains("show")
+    ){
+
+      closeRegistration();
+
+    }
+
+  }
+);
+
+registrationForm.addEventListener(
+  "submit",
+  event=>{
+
+    event.preventDefault();
+
+
+    if(!selectedLevelId){
+
+      return;
+
+    }
+
+
+    const lastName =
+      document
+        .getElementById(
+          "studentLastName"
+        )
+        .value
+        .trim();
+
+
+    const firstName =
+      document
+        .getElementById(
+          "studentFirstName"
+        )
+        .value
+        .trim();
+
+
+    const payment =
+      document
+        .getElementById(
+          "paymentMethod"
+        )
+        .value;
+
+
+    if(
+      !lastName ||
+      !firstName ||
+      !payment
+    ){
+
+      showNotification(
+        "Formulaire incomplet",
+        "Veuillez remplir tous les champs."
+      );
+
+
+      return;
+
+    }
+
+
+    const level =
+      levels.find(
+        item =>
+          item.id === selectedLevelId
+      );
+
+
+    if(pack === "smart"){
+
+      saveRegistration({
+
+        pack:"smart",
+
+        levelId:selectedLevelId,
+
+        level:level.name,
+
+        nom:lastName,
+
+        prenom:firstName,
+
+        paiement:payment
+
+      });
+
+
+      closeRegistration();
+
+
+      showNotification(
+
+        "Inscription confirmée",
+
+        `${firstName} ${lastName} est inscrit(e) au Pack Smart.`
+
+      );
+
+
+      return;
+
+    }
+
+
+    if(pack === "smartplus"){
+
+      saveRegistration({
+
+        pack:"smartplus",
+
+        levelId:selectedLevelId,
+
+        level:level.name,
+
+        nom:lastName,
+
+        prenom:firstName,
+
+        paiement:payment
+
+      });
+
+
+      closeRegistration();
+
+
+      showNotification(
+
+        "Inscription confirmée",
+
+        `${firstName} ${lastName} est inscrit(e) au Pack Smart+.`
+
+      );
+
+
+      return;
+
+    }
+
+
+    const capacities =
+      getCapacities();
+
+
+    if(
+      capacities[selectedLevelId] <= 0
+    ){
+
+      closeRegistration();
+
+
+      showNotification(
+
+        "Niveau complet",
+
+        "Cette salle ne dispose plus de places."
+
+      );
+
+
+      renderTable();
+
+
+      return;
+
+    }
+
+    capacities[selectedLevelId]--;
+
+
+    saveCapacities(
+      capacities
+    );
+
+
+
+    
+
+    saveRegistration({
+
+      pack:"prestige",
+
+      levelId:selectedLevelId,
+
+      level:level.name,
+
+      nom:lastName,
+
+      prenom:firstName,
+
+      paiement:payment
+
+    });
+
+
+    const remaining =
+      capacities[selectedLevelId];
+
+
+    closeRegistration();
+
+
+    showNotification(
+
+      "Inscription confirmée",
+
+      `${firstName} ${lastName} — ${remaining} place(s) restante(s).`
+
+    );
+
+
+    renderTable();
+
+  }
+);
+
+
+function saveRegistration(data){
+
+  const key =
+    "gamma_registrations";
+
+
+  let registrations = [];
+
+
+  try{
+
+    registrations =
+      JSON.parse(
+        localStorage.getItem(
+          key
+        )
+      ) || [];
+
+  }
+
+  catch(e){
+
+    registrations = [];
+
+  }
+
+
+  registrations.push({
+
+    ...data,
+
+    date:
+      new Date().toLocaleString(
+        "fr-FR"
+      )
+
+  });
+
+
+  localStorage.setItem(
+
+    key,
+
+    JSON.stringify(
+      registrations
+    )
+
+  );
+
+}
+
+
+const notification =
+  document.getElementById(
+    "notification"
+  );
+
+
+const notificationTitle =
+  document.getElementById(
+    "notificationTitle"
+  );
+
+
+const notificationText =
+  document.getElementById(
+    "notificationText"
+  );
+
+
+let notificationTimer;
+
+
+function showNotification(
+  title,
+  text
+){
+
+  notificationTitle.textContent =
+    title;
+
+
+  notificationText.textContent =
+    text;
+
+
+  notification.classList.add(
+    "show"
+  );
+
+
+  clearTimeout(
+    notificationTimer
+  );
+
+
+  notificationTimer =
+    setTimeout(()=>{
+
+      notification.classList.remove(
+        "show"
+      );
+
+    },4000);
+
+}
+
+
+renderTable();
+
+</script>
+
+</body>
+
+</html>
